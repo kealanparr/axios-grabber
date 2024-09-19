@@ -1,4 +1,5 @@
 import axios from 'axios';
+import https from 'https';
 
 const run = () => {
     const httpsAgent = new https.Agent({
