@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 const run = () => {
-    axios.get('https://www.google.co.uk').then(function (response) {
+    const httpsAgent = new https.Agent({
+      ca: fs.readFileSync("/etc/ssl/cert.pem")
+    })
+    
+    axios.get('https://www.google.co.uk', { httpsAgent }).then(function (response) {
       // handle success
       console.log(response);
     }).catch(function (error) {
@@ -11,3 +15,5 @@ const run = () => {
 }
 
 run()
+
+
